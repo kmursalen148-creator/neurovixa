@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kmursalen148-creator.github.io/neurovixa/sitemap.xml
