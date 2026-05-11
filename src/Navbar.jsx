@@ -1,32 +1,28 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
-export default function Navbar() {
-
+function Navbar() {
   return (
     <nav
       style={{
         width: "100%",
-        padding: "20px 40px",
+        padding: "18px 40px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         background: "rgba(255,255,255,0.05)",
-        backdropFilter: "blur(20px)",
+        backdropFilter: "blur(15px)",
         borderBottom: "1px solid rgba(255,255,255,0.1)",
         position: "sticky",
         top: 0,
         zIndex: 1000,
       }}
     >
-
       <h1
         style={{
-          fontSize: "32px",
-          fontWeight: "bold",
-          background:
-            "linear-gradient(to right,#9333ea,#2563eb)",
-          WebkitBackgroundClip: "text",
-          color: "transparent",
+          color: "#fff",
+          fontSize: "28px",
+          fontWeight: "700",
+          letterSpacing: "1px",
         }}
       >
         Neurovixa
@@ -36,39 +32,46 @@ export default function Navbar() {
         style={{
           display: "flex",
           gap: "25px",
-          flexWrap: "wrap",
+          alignItems: "center",
         }}
       >
-
-        <Link style={linkStyle} to="/">
+        <a href="/" style={linkStyle}>
           Home
-        </Link>
+        </a>
 
-        <Link style={linkStyle} to="/cv-maker">
-          CV Maker
-        </Link>
+        <a href="/" style={linkStyle}>
+          Tools
+        </a>
 
-        <Link style={linkStyle} to="/image-to-pdf">
-          Image To PDF
-        </Link>
+        <a href="/" style={linkStyle}>
+          About
+        </a>
 
-        <Link style={linkStyle} to="/calculator">
-          Calculator
-        </Link>
+        <a href="/" style={linkStyle}>
+          Contact
+        </a>
 
-        <Link style={linkStyle} to="/bmi-calculator">
-          BMI
-        </Link>
-
+        <button style={buttonStyle}>Get Started</button>
       </div>
-
     </nav>
   );
 }
 
 const linkStyle = {
-  color: "white",
+  color: "#ffffff",
   textDecoration: "none",
-  fontSize: "17px",
+  fontSize: "16px",
+  fontWeight: "500",
+};
+
+const buttonStyle = {
+  background: "linear-gradient(135deg,#4F46E5,#06B6D4)",
+  border: "none",
+  color: "#fff",
+  padding: "10px 20px",
+  borderRadius: "12px",
+  cursor: "pointer",
   fontWeight: "600",
 };
+
+export default Navbar;
