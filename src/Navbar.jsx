@@ -1,6 +1,7 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+export default function Navbar() {
+
   return (
     <nav
       style={{
@@ -15,44 +16,61 @@ function Navbar() {
         position: "sticky",
         top: 0,
         zIndex: 1000,
+        flexWrap: "wrap",
       }}
     >
-      <h1
+
+      <Link
+        to="/"
         style={{
-          color: "#fff",
-          fontSize: "28px",
-          fontWeight: "700",
-          letterSpacing: "1px",
+          textDecoration: "none",
         }}
       >
-        Neurovixa
-      </h1>
+
+        <h1
+          style={{
+            color: "#fff",
+            fontSize: "28px",
+            fontWeight: "700",
+            letterSpacing: "1px",
+          }}
+        >
+          Neurovixa
+        </h1>
+
+      </Link>
 
       <div
         style={{
           display: "flex",
-          gap: "25px",
+          gap: "20px",
           alignItems: "center",
+          flexWrap: "wrap",
         }}
       >
-        <a href="/" style={linkStyle}>
+
+        <Link style={linkStyle} to="/">
           Home
-        </a>
+        </Link>
 
-        <a href="/" style={linkStyle}>
-          Tools
-        </a>
-
-        <a href="/" style={linkStyle}>
+        <Link style={linkStyle} to="/about">
           About
-        </a>
+        </Link>
 
-        <a href="/" style={linkStyle}>
+        <Link style={linkStyle} to="/contact">
           Contact
-        </a>
+        </Link>
 
-        <button style={buttonStyle}>Get Started</button>
+        <Link style={linkStyle} to="/privacy-policy">
+          Privacy
+        </Link>
+
+        <Link style={linkStyle} to="/terms">
+          Terms
+        </Link>
+
       </div>
+
     </nav>
   );
 }
@@ -63,15 +81,3 @@ const linkStyle = {
   fontSize: "16px",
   fontWeight: "500",
 };
-
-const buttonStyle = {
-  background: "linear-gradient(135deg,#4F46E5,#06B6D4)",
-  border: "none",
-  color: "#fff",
-  padding: "10px 20px",
-  borderRadius: "12px",
-  cursor: "pointer",
-  fontWeight: "600",
-};
-
-export default Navbar;
