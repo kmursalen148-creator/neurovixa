@@ -11,7 +11,19 @@ import UnitConverter from "./UnitConverter";
 import ImageToPDF from "./ImageToPDF";
 import CVMaker from "./CVMaker";
 
-function App() {
+import About from "./About";
+import Contact from "./Contact";
+import PrivacyPolicy from "./PrivacyPolicy";
+import Terms from "./Terms";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+function Home() {
+
   return (
     <div
       style={{
@@ -21,6 +33,7 @@ function App() {
         fontFamily: "Arial",
       }}
     >
+
       <Navbar />
 
       <div
@@ -29,11 +42,13 @@ function App() {
           padding: "60px 20px",
         }}
       >
+
         <h1
           style={{
             fontSize: "55px",
             marginBottom: "20px",
-            background: "linear-gradient(90deg,#4F46E5,#06B6D4)",
+            background:
+              "linear-gradient(90deg,#4F46E5,#06B6D4)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             fontWeight: "bold",
@@ -52,16 +67,19 @@ function App() {
         >
           Free Premium Online Tools Website with modern UI and powerful utilities.
         </p>
+
       </div>
 
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fit,minmax(320px,1fr))",
           gap: "30px",
           padding: "30px",
         }}
       >
+
         <Calculator />
 
         <AgeCalculator />
@@ -77,6 +95,7 @@ function App() {
         <ImageToPDF />
 
         <CVMaker />
+
       </div>
 
       <footer
@@ -84,13 +103,45 @@ function App() {
           textAlign: "center",
           padding: "30px",
           marginTop: "40px",
-          borderTop: "1px solid rgba(255,255,255,0.1)",
+          borderTop:
+            "1px solid rgba(255,255,255,0.1)",
           color: "#94a3b8",
         }}
       >
+
         © 2026 Neurovixa — All Rights Reserved
+
       </footer>
+
     </div>
+  );
+}
+
+function App() {
+
+  return (
+
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+
+        <Route path="/about" element={<About />} />
+
+        <Route path="/contact" element={<Contact />} />
+
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
+
+        <Route path="/terms" element={<Terms />} />
+
+      </Routes>
+
+    </BrowserRouter>
+
   );
 }
 
