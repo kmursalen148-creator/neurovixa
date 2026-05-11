@@ -1,0 +1,64 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#070B1A;
+  color:white;
+}
+
+button{
+  cursor:pointer;
+  border:none;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.03);
+}
+
+input,textarea,select{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  margin-top:10px;
+  background:#111827;
+  color:white;
+}
+
+.tool-container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.tool-box{
+  width:100%;
+  max-width:500px;
+  background:rgba(255,255,255,0.08);
+  padding:30px;
+  border-radius:24px;
+  backdrop-filter:blur(20px);
+}
+
+.tool-title{
+  font-size:32px;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.tool-btn{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  border-radius:14px;
+  background:linear-gradient(to right,#9333ea,#2563eb);
+  color:white;
+  font-size:16px;
+}
